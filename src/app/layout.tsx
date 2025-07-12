@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Study-AI",
-  description: "Upload your study materials, questions & answers and get AI-generated summaries",
+  title: "Excelio",
+  description: "Upload your excel file and view its contents seamlessly without adjusting rows and columns",
 };
 
 export default function RootLayout({

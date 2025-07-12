@@ -4,12 +4,12 @@ import * as XLSX from "xlsx";
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
   const [workBookState, setWorkBookState] = useState<XLSX.WorkBook>();
-  const [selectedSheet, setSelectedSheet] = useState<String | null>(null);
+  const [selectedSheet, setSelectedSheet] = useState<string | null>(null);
   return (
     <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold  text-amber-600">Study Like a Pro</h1>
+      <h1 className="text-4xl font-bold  text-amber-600">Excel File Viewer</h1>
       <strong className="text-2xl  italic text-amber-500">
-        "Upload your exam questions and answers and get AI-generated summaries"
+        Upload your excel file and view its contents seamlessly without adjusting rows and columns
       </strong>
       <div className="mt-10 flex flex-col items-center gap-5">
         <input
