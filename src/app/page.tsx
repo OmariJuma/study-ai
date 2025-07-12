@@ -66,6 +66,36 @@ export default function Home() {
             ))}
           </div>
         )}
+        {selectedSheet && workBookState && (
+          <div className="mt-6 w-full max-w-11/12">
+            <h2 className="text-xl font-bold mb-4 text-amber-700">{selectedSheet}</h2>
+            <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
+              <table className="min-w-full">
+                <tbody>
+                  {(XLSX.utils.sheet_to_json(
+                    workBookState.Sheets[selectedSheet as string],
+                    { header: 1 }
+                  ) as unknown[]).map((row, rowIndex) => {
+                    // Ensure row is an array
+                    const cells = Array.isArray(row) ? row : [];
+                    return (
+                      <tr key={rowIndex} className="border-b border-gray-200 hover:bg-amber-50">
+                        {cells.map((cell, cellIndex) => (
+                          <td
+                            key={cellIndex}
+                            className="px-4 py-3 text-left text-amber-900"
+                          >
+                            {cell || ''}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
