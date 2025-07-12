@@ -42,7 +42,7 @@ export default function Home() {
           htmlFor="file-upload"
           className="cursor-pointer text-amber-600 bg-gray-50 px-4 py-2 rounded-md"
         >
-          Upload your exam questions and answers
+         Click to Upload File
         </label>
         {file && (
           <p className="bg-amber-500 text-white px-4 py-2 rounded-md w-1/3">
